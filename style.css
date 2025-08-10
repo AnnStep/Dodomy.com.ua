@@ -1,0 +1,345 @@
+:root {
+ --primary-color: #5C4B40;
+ --secondary-color: #8E7A63;
+ --accent-color: #A5A58D;
+ --background-light: #EFE4D6;
+ --background-dark: #D8C3A5;
+}
+
+* {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+}
+
+body {
+ font-family: 'Oswald', sans-serif;
+ line-height: 1.6;
+ color: var(--primary-color);
+ background-color: var(--background-light);
+}
+
+.container {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 20px;
+}
+
+/* Header */
+.main-header {
+ position: relative;
+ background-color: var(--background-dark);
+ color: #6d5f4e;
+ text-align: center;
+ overflow: hidden;
+ height: 45vh;
+ /* background-image: url('img/Ukraine.jpg'); Зображення України як фон */
+ background-size: cover;
+ background-position: center;
+}
+
+.header-top {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 20px;
+ background-color: rgba(216, 195, 165, 0.8);
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ z-index: 10;
+}
+
+.logo-img {
+ height: 50px;
+}
+
+.header-social-links a {
+ color: var(--primary-color);
+ margin: 0 20px;
+ text-decoration: none;
+ font-weight: bold;
+ transition: color 0.4s ease;
+}
+
+.header-social-links a:hover {
+ color: var(--accent-color);
+}
+
+.contact-info a {
+ color: var(--primary-color);
+ font-size: 1.1rem;
+ font-weight: bold;
+ text-decoration: none;
+ transition: color 0.4s;
+}
+
+.contact-info a:hover {
+ color: var(--accent-color);
+}
+
+/* Hero Content */
+.hero-content {
+ position: relative;
+ z-index: 2;
+ padding: 150px 50px 50px 20px;
+ color: #fff;
+ background-color: rgba(134, 120, 98, 0.301);
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
+.hero-content h1 {
+ color: #fff;
+ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+ font-size: 3rem; /* Збільшити розмір шрифту */
+}
+
+.hero-content p {
+ color: #fff;
+ text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+ font-size: 1.2rem; /* Збільшити розмір шрифту */
+}
+
+/* Blinking button animation */
+@keyframes blinkingButton {
+ 0% { background-color: var(--accent-color); }
+ 20% { background-color: #5C4B40; }
+ 30% { background-color: #8E7A63; }
+ 60% { background-color: #EFE4D6; }
+ 80% { background-color: #D8C3A5; }
+ 100% { background-color: var(--accent-color); }
+}
+
+.contact-button {
+ background-color: var(--accent-color);
+ color: #fff;
+ border: none;
+ padding: 15px 30px;
+ font-size: 1.1rem;
+ font-weight: bold;
+ cursor: pointer;
+ border-radius: 5px;
+ animation: blinkingButton 4s infinite;
+}
+
+.contact-button:hover {
+ animation: none;
+ background-color: #8E7A63;
+}
+
+/* Sections */
+.section {
+ padding: 60px 0;
+}
+
+.colored-bg {
+ background-color: var(--background-dark);
+}
+
+.section-content {
+ display: flex;
+ align-items: center;
+ gap: 40px;
+ flex-wrap: wrap;
+}
+
+.section-content .text-content {
+ flex: 1;
+ min-width: 300px;
+}
+
+.section-content .image-content {
+ flex: 1;
+ min-width: 300px;
+ text-align: center;
+}
+
+.section-content img {
+ max-width: 100%;
+ height: auto;
+ border-radius: 10px;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ transform: rotate(-1deg);
+ transition: transform 0.3s ease;
+}
+
+.section-content img:hover {
+ transform: rotate(0deg);
+}
+
+.reverse-order {
+ flex-direction: row-reverse;
+}
+
+h2 {
+ font-size: 2rem;
+ color: var(--primary-color);
+ margin-bottom: 20px;
+ text-align: center;
+}
+
+#quick-sale h2 {
+ color: var(--secondary-color);
+}
+
+p, ul {
+ font-size: 1rem;
+ margin-bottom: 15px;
+}
+
+ul {
+ list-style-type: none;
+}
+
+ul li {
+ position: relative;
+ padding-left: 25px;
+ margin-bottom: 10px;
+}
+
+ul li::before {
+ content: '✅';
+ position: absolute;
+ left: 0;
+ color: var(--accent-color);
+}
+
+/* Contact form */
+.contact-form {
+ display: flex;
+ flex-direction: column;
+ max-width: 600px;
+ margin: 0 auto;
+ gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+ padding: 15px;
+ border: 1px solid var(--secondary-color);
+ border-radius: 5px;
+ font-size: 1rem;
+ background-color: #fff;
+}
+
+.contact-form textarea {
+ resize: vertical;
+}
+
+/* Footer */
+.main-footer {
+ background-color: var(--primary-color);
+ color: #fff;
+ padding: 30px 20px;
+ text-align: center;
+}
+
+.main-footer .container {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 20px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+ .section-content, .reverse-order {
+  flex-direction: column;
+ }
+ 
+ .main-header {
+ height: 100vh;
+ }
+ .header-top {
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  background-color: var(--background-dark);
+ }
+ 
+ .hero-content {
+ padding: 50px 20px;
+ background-color: rgba(0, 0, 0, 0.7);
+ }
+ 
+ .main-header h1 {
+ font-size: 2rem;
+ }
+ 
+ .main-header p {
+ font-size: 1rem;
+ }
+
+ h2 {
+ font-size: 1.5rem;
+ text-align: center;
+ }
+}
+/* Слайдер */
+
+.slideshow-container {
+    max-width: 1200px;
+    position: relative;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slideshow-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.mySlides {
+    display: none;
+    flex-grow: 1;
+}
+
+/* Кнопки "Вперед" та "Назад" */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background with a little opacity */
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+/* Анімація переходу */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
