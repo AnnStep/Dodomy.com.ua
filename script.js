@@ -2,21 +2,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Код для кнопки та форми контакту
     const contactBtn = document.getElementById('contactBtn');
     const contactFormSection = document.getElementById('contact-form');
-    const contactForm = document.getElementById('contactForm');
-
+    
     if (contactBtn && contactFormSection) {
         contactBtn.addEventListener('click', () => {
             contactFormSection.scrollIntoView({
                 behavior: 'smooth'
             });
-        });
-    }
-
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Дякуємо за ваше повідомлення! Ми зв\'яжемося з вами найближчим часом.');
-            contactForm.reset();
         });
     }
 
@@ -82,4 +73,3 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeSlider('.slideshow-container:not(.rent-slideshow)', '.prev:not(.rent-prev)', '.next:not(.rent-next)'); // Перший слайдер
     initializeSlider('.rent-slideshow', '.rent-prev', '.rent-next'); // Другий слайдер для оренди
 });
-
