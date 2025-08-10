@@ -15,14 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function initializeSlider(containerClass, prevButtonClass, nextButtonClass) {
         let slideIndex = 1;
         const container = document.querySelector(containerClass);
-        if (!container) return; // Вихід, якщо контейнер не знайдено
+        if (!container) return; 
 
         const slides = container.getElementsByClassName("mySlides");
         const prevButton = document.querySelector(prevButtonClass);
         const nextButton = document.querySelector(nextButtonClass);
         let timeout;
 
-        // Функція, що відповідає за автоматичне перемикання
         function showSlidesAutomatic() {
             for (let i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
@@ -35,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
             timeout = setTimeout(showSlidesAutomatic, 4000); 
         }
 
-        // Функція для ручного перемикання
         function plusSlides(n) {
             clearTimeout(timeout);
             slideIndex += n;
@@ -48,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
             showSlidesManual(slideIndex);
         }
 
-        // Функція, що показує слайд і запускає таймер знову
         function showSlidesManual(n) {
             for (let i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
@@ -57,10 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
             timeout = setTimeout(showSlidesAutomatic, 4000);
         }
         
-        // Запускаємо слайдер автоматично
         showSlidesAutomatic();
 
-        // Додаємо обробники подій для кнопок
         if (prevButton) {
             prevButton.addEventListener('click', () => plusSlides(-1));
         }
@@ -69,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Ініціалізуємо обидва слайдери
-    initializeSlider('.slideshow-container:not(.rent-slideshow)', '.prev:not(.rent-prev)', '.next:not(.rent-next)'); // Перший слайдер
-    initializeSlider('.rent-slideshow', '.rent-prev', '.rent-next'); // Другий слайдер для оренди
+    initializeSlider('.slideshow-container:not(.rent-slideshow)', '.prev:not(.rent-prev)', '.next:not(.rent-next)');
+    initializeSlider('.rent-slideshow', '.rent-prev', '.rent-next');
 });
