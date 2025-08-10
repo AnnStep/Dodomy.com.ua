@@ -264,7 +264,7 @@ ul li::before {
     .header-top {
         flex-direction: column;
         gap: 10px;
-        position: center;
+        position: relative;
         background-color: var(--background-light);
     }
     
