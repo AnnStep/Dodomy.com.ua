@@ -264,8 +264,8 @@ ul li::before {
     .header-top {
         flex-direction: column;
         gap: 10px;
-        position: relative;
-        background-color: var(--background-dark);
+        position: center;
+        background-color: var(--background-light);
     }
     
     .hero-content {
