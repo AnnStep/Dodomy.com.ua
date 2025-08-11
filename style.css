@@ -247,14 +247,18 @@ ul li::before {
 }
 
 /* Media Queries for Responsiveness */
-/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+ .section-content, .reverse-order {
+  flex-direction: column;
+ }
+ 
 @media (max-width: 768px) {
     .section-content, .reverse-order {
         flex-direction: column;
     }
     
     .main-header {
-        height: 60vh;
+        height: 60vh; /* Зменшено висоту хедера, щоб було видно більше контенту */
     }
 
     .header-top {
@@ -266,32 +270,27 @@ ul li::before {
     
     .hero-content {
         padding: 50px 20px;
-        background-color: rgba(216, 195, 165, 0.8);
-        
-        /* Вирівнювання по центру */
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+        background-color: rgba(216, 195, 165, 0.8); /* Змінено на світліший колір */
     }
     
     .hero-content h1 {
-        font-size: 2rem;
-        text-align: center;
-        color: #fff;
+        font-size: 2rem; /* Зменшено розмір заголовка для мобільних */
+        text-align: center; /* Вирівняно по центру */
+        color: #fff; /* Змінено колір тексту на білий */
     }
     
     .hero-content p {
-        font-size: 1rem;
-        text-align: center;
-        color: #fff;
+        font-size: 1rem; /* Зменшено розмір підзаголовка для мобільних */
+        text-align: center; /* Вирівняно по центру */
+        color: #fff; /* Змінено колір тексту на білий */
     }
-    
+
     h2 {
         font-size: 1.5rem;
         text-align: center;
     }
 }
-
+}
 /* Слайдер */
 
 .slideshow-container {
